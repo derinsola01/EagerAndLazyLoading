@@ -69,7 +69,10 @@ public class CreateCoursesDemo {
 		Instructor instructor = session.get(Instructor.class, id);
 		System.out.println("Derin's Debugger: The instructor is: " + instructor);
 		System.out.println("Derin's Debugger: The instructorDetail are: " + instructor.getInstructorDetail());
-		System.out.println("Derin's Debugger: The instructor Courses are: " + instructor.getCourses());
+		System.out.println("Derin's Debugger: The instructor Courses before closing session are: " + instructor.getCourses());
+		
+		session.close();
+		System.out.println("Derin's Debugger: The instructor Courses after closing session are: " + instructor.getCourses());
 	}
 	
 	public static void deleteCourse(Session session, int id) {	
